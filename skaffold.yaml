@@ -16,11 +16,19 @@ build:
         manual:
           - src: 'src/**/*.ts'
             dest: .
-    - image: jfelipef/ticketing-client
+    - image: jfelipef/client
       context: client
       docker:
         dockerfile: Dockerfile
       sync:
         manual:
           - src: '**/*.js'
+            dest: .
+    - image: jfelipef/tickets
+      context: tickets
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: 'src/**/*.ts'
             dest: .
