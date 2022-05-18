@@ -5,12 +5,17 @@ This project is part of a course which can be find in the following url: https:/
 In this project an event ticketing website is developed focusing on the backend.
 
 Technologies used: 
+
 -Node.js 
--Docker / 
-Kubernetes -MongoDB 
+
+-Docker / Kubernetes 
+
+-MongoDB 
+
 -NATS Streaming Service
 
 Architecture pattern implemented: 
+
 -Microservices
 
 ## Auth service
