@@ -44,4 +44,4 @@ const newUser = new User<UserAttrs>({
   password: 'asddasd',
 });
 
-export { User };
+export { User, UserAttrs };

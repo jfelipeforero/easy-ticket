@@ -14,8 +14,10 @@ spec:
     spec:
       containers:
         - name: auth
-          image: jfelipef/auth
+          image: us.gcr.io/ticketing-dev-349318/auth
           env:
+            - name: MONGO_URI
+              value: 'mongodb://auth-mongo-srv:27017/auth'
             - name: JWT_KEY
               valueFrom:
                 secretKeyRef:

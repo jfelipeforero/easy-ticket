@@ -3,14 +3,14 @@ import { body } from 'express-validator';
 import jwt from 'jsonwebtoken';
 
 import { validateRequest, BadRequestError } from '@jfftickets/common';
-import { User } from '../models/user';
+import { User, UserAttrs } from '../models/user';
 
 const router = express.Router();
 
 router.post(
   '/api/users/signup',
   [
-    body('email').isEmail().withMessage('Email mush be valid'),
+    body('email').isEmail().withMessage('Email must be valid'),
     body('password')
       .trim()
       .isLength({ min: 4, max: 20 })
@@ -24,7 +24,7 @@ router.post(
     if (existingUser) {
       throw new BadRequestError('Email in use');
     }
-    const user = new User({ email, password });
+    const user = new User<UserAttrs>({ email, password });
     await user.save();
 
     //Generate JWT
