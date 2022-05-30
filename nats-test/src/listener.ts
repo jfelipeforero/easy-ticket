@@ -15,6 +15,7 @@ stan.on('connect', () => {
     console.log('NATS connection closed!');
     process.exit();
   });
+
   new TicketCreatedListener(stan).listen();
 });
 
