@@ -1,8 +1,8 @@
 ## Description
 
-This project is part of a course which can be find in the following url: https://www.udemy.com/course/microservices-with-node-js-and-react/
+This project is part of a course that can be found at the following URL: https://www.udemy.com/course/microservices-with-node-js-and-react/
 
-In this project an event ticketing website is developed focusing on the backend.
+In this project, an event ticketing website is developed focusing on the backend.
 
 ### Technologies used: 
 
@@ -22,19 +22,19 @@ In this project an event ticketing website is developed focusing on the backend.
 
 ### Data Models
 
-The database desing and implementation is done with MongoDB   
+The database design and implementation are done with MongoDB   
 
 ## Auth service
 
-It is responsable of the registration of new users, as well as other authorization functions as signin and signout.
+It is responsible for the registration of new users, as well as other authorization functions such as sign-in and sign-out.
 
 ## Client service (Not part of my implementation) 
 
-Is a service implemented with Next.js(React) which initialize the website and it provides multiple authorization functions on its interface.
+Is a service implemented with Next.js(React) which initializes the website and it provides multiple authorization functions on its interface.
 
 ## Common Module 
 
-Is an NPM package provided with multiple middlewares and error handlers used along all services, also contains NATS Streaming Service implementation which allows the creation of customize event listeners and event publishers.
+Is an NPM package provided with multiple middlewares and error handlers used along all services, also contains NATS Streaming Service implementation which allows the creation of customized event listeners and event publishers.
 
 ### Installation
 
@@ -42,11 +42,11 @@ Is an NPM package provided with multiple middlewares and error handlers used alo
 
 ## Infra Directory
 
-It contains all Pod and ClusterIP Service deployments including a MongoDB Memory Server implementation for testing and development purposes, also an ingress-nginx controller deployment is created which acts as a load balancer and manages the traffic between Kubernetes services and external ones.
+It contains all Pod and ClusterIP Service deployments including a MongoDB Memory Server implementation for testing and development purposes, also an ingress-Nginx controller deployment is created which acts as a load balancer and manages the traffic between Kubernetes services and external ones.
 
 ## Tickets Service
 
-It is responsable of the creation and update of tickets as well as the retrieving of all tickets avaible in the moment including the retrieve of a single ticket.
+It is responsible for the creation and update of tickets as well as the retrieving of all tickets available at the moment including the retrieve of a single ticket.
 
 ## How to run the code
 - Download dependencies (`npm install`) in the following directories:
@@ -72,13 +72,13 @@ tickets
 - Run skaffold dev in ticketing directory
 ## Tests
 
-This tests check for the routes functionality using jest, supertest to make fake requests and a MongoDB memory server for data storage. 
+These tests check for the functionality of the routes using jest, supertest to make fake requests, and a MongoDB memory server for data storage. 
 
 
 ### Auth service tests
 
 - Checks for valid username and password when registering.
-- Checks for valid credentials when signin in.
+- Checks for valid credentials when signing in.
 - Checks for valid cookie treatment between client and server.
 
 ... among other tests
@@ -94,6 +94,8 @@ In the auth service directory enter `npm run test` to run the tests.
 ... among other tests
 
 In the ticket service directory enter `npm run test` to run the tests.
+
+
 
 
 
