@@ -49,15 +49,22 @@ It contains all Pod and ClusterIP Service deployments including a MongoDB Memory
 It is responsable of the creation and update of tickets as well as the retrieving of all tickets avaible in the moment including the retrieve of a single ticket.
 
 ## How to run the code
-- Download dependencies (`npm install`) in the following directories: 
+- Download dependencies (`npm install`) in the following directories:
+
 auth
+
 client
+
 nats-test
+
 tickets
 
-- Create and push docker images to docker hub(for skaffold use) (`docker build -t (yourdockerid)/(nameofthecurrentdirectory) .`) in the following directories
+- Create and push docker images to docker hub(for skaffold use) (`docker build -t (yourdockerid)/(nameofthecurrentdirectory) .`) in the following directories:
+
 auth
+
 client
+
 tickets
 
 - Create a kubernetes secret `kubectl create secret generic jwt-secret --from-literal=JWT_KEY=asdf`
@@ -73,6 +80,7 @@ This tests check for the routes functionality using jest, supertest to make fake
 - Checks for valid username and password when registering.
 - Checks for valid credentials when signin in.
 - Checks for valid cookie treatment between client and server.
+
 ... among other tests
 
 In the auth service directory enter `npm run test` to run the tests.
@@ -82,6 +90,7 @@ In the auth service directory enter `npm run test` to run the tests.
 - Checks for valid data when creating a new ticket.
 - Checks if the current user attempting to update a ticket owns that ticket.
 - Checks for correct ticket retrieving of the database when listing all tickets.
+
 ... among other tests
 
 In the ticket service directory enter `npm run test` to run the tests.
