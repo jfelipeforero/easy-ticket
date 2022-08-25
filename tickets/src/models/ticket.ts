@@ -1,12 +1,18 @@
-import { Schema, model } from 'mongoose';
+import { Schema, model, Model, HydratedDocument } from 'mongoose';
+import { updateIfCurrentPlugin } from 'mongoose-update-if-current';
 
 interface TicketAttrs {
   title: string;
   price: number;
   userId: string;
+  version?: number;
 }
 
-const ticketSchema = new Schema<TicketAttrs>(
+interface TicketModel extends Model<TicketAttrs> {
+  build(attrs: TicketAttrs): Promise<HydratedDocument<TicketAttrs, {}>>;
+}
+
+const ticketSchema = new Schema<TicketAttrs, TicketModel, {}>(
   {
     title: {
       type: String,
@@ -31,6 +37,13 @@ const ticketSchema = new Schema<TicketAttrs>(
   }
 );
 
-const Ticket = model<TicketAttrs>('Ticket', ticketSchema);
+ticketSchema.set('versionKey', 'version');
+ticketSchema.plugin(updateIfCurrentPlugin);
+
+ticketSchema.static('build', function build(attrs: TicketAttrs) {
+  return Ticket.create(attrs);
+});
+
+const Ticket = model<TicketAttrs, TicketModel>('Ticket', ticketSchema);
 
 export { Ticket, TicketAttrs };

@@ -2,7 +2,12 @@ import express, { json } from 'express';
 import 'express-async-errors';
 import cookieSession from 'cookie-session';
 
-import { currentUserRouter, signinRouter, signoutRouter, signupRouter } from './routes/index';
+import {
+  currentUserRouter,
+  signinRouter,
+  signoutRouter,
+  signupRouter,
+} from './routes/index';
 import { errorHandler, NotFoundError } from '@jfftickets/common';
 
 const app = express();
