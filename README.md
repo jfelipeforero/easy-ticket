@@ -1,7 +1,5 @@
 ## Description
 
-This project is part of a course that can be found at the following URL: https://www.udemy.com/course/microservices-with-node-js-and-react/
-
 In this project, an event ticketing website is developed focusing on the backend.
 
 ### Technologies used: 
